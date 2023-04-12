@@ -4,6 +4,9 @@ import React, { useState,useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// styles
+import styles from "./SignUp.module.css"
+
 // functions
 import { validate } from './validate';
 import { notify } from './toast';
@@ -57,36 +60,42 @@ const SignUp = () => {
 
 
     return (
-        <div>
-            <form onSubmit={submitHandler}>
-                <h2>SignUp</h2>
-                <div>
+        <div className={styles.container}>
+            <form onSubmit={submitHandler} className={styles.formContainer}>
+                <h2 className={styles.header}>SignUp</h2>
+                <div className={styles.formField}>
                     <label>name</label>
-                    <input type="text" name='name' value={data.name} onChange={changeHandler} onFocus={focusHandler}/>
+                    <input type="text" name='name' value={data.name} onChange={changeHandler} onFocus={focusHandler}
+                    className={(errors.name && touched.name) ? styles.uncompleted : styles.formInput}/>
                     {errors.name && touched.name &&<span>{errors.name} </span>}
                 </div>
-                <div>
+                <div className={styles.formField}>
                     <label>Email</label>
-                    <input type="email" name='email' value={data.email}  onChange={changeHandler} onFocus={focusHandler}/>
+                    <input type="email" name='email' value={data.email}  onChange={changeHandler} onFocus={focusHandler}
+                    className={(errors.email && touched.email) ? styles.uncompleted : styles.formInput}/>
                     {errors.email && touched.email && <span>{errors.email} </span>}
                 </div>
-                <div>
+                <div className={styles.formField}>
                     <label>Password</label>
-                    <input type="password" name='password' value={data.password}  onChange={changeHandler} onFocus={focusHandler}/>
+                    <input type="password" name='password' value={data.password}  onChange={changeHandler} onFocus={focusHandler}
+                    className={(errors.password && touched.password) ? styles.uncompleted : styles.formInput}/>
                     {errors.password && touched.password && <span>{errors.password} </span>}
                 </div>
-                <div>
+                <div className={styles.formField}>
                     <label>confirmPassword</label>
-                    <input type="password" name='confirmPassword' value={data.confirmPassword}  onChange={changeHandler} onFocus={focusHandler}/>
+                    <input type="password" name='confirmPassword' value={data.confirmPassword}  onChange={changeHandler} onFocus={focusHandler}
+                    className={(errors.confirmPassword && touched.confirmPassword) ? styles.uncompleted : styles.formInput}/>
                     {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword} </span>}
                 </div>
-                <div>
+                <div className={styles.formField}>
+                    <div className={styles.checkboxContainer}>
                     <label>i accept terms of privacy policy</label>
                     <input type="checkbox" name='isAccepted' value={data.isAccepted}  onChange={changeHandler} onFocus={focusHandler}/>
+                    </div>
                     {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted} </span>}
 
                 </div>
-                <div>
+                <div className={styles.formButtons}>
                     <a href='http'>Login</a>
                     <button type='submit'>SignUp</button>
 
