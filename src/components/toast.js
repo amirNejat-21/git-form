@@ -1,10 +1,10 @@
 import { toast } from 'react-toastify';
 
 
- export const notify = (type) => {
+ export const notify = (text,type) => {
     if (type === 'success'){
-        toast.success("You signed in successfully")
+        toast.success(text)
     }else{
-        toast.error("invaled data" )
+        toast.error(text )
     }
 }
