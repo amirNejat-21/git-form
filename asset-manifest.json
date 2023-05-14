@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/git-form/static/css/main.7ade23de.css",
+    "main.js": "/git-form/static/js/main.2542aa07.js",
+    "index.html": "/git-form/index.html",
+    "main.7ade23de.css.map": "/git-form/static/css/main.7ade23de.css.map",
+    "main.2542aa07.js.map": "/git-form/static/js/main.2542aa07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ade23de.css",
+    "static/js/main.2542aa07.js"
+  ]
+}
